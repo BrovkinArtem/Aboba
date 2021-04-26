@@ -2,15 +2,12 @@ os: windows
 dist: bionic
 
 language:
-    - c
+    - cpp
     
 before_install:
     - pip install --user cpp-coveralls
     
 addons:
-    sonarcloud:
-        organization: "BrovkinArtem
-    token: $SONAR_TOKEN
     
 script:
     - qmake 
@@ -21,11 +18,6 @@ after_success:
     - coveralls --root . -E ".*external.*" -E ".*tests.*"
     - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
     - sonar-scanner
-    
-cache:
-    directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.sonar/cache'
     
 notifications:
     email: false
