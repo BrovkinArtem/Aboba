@@ -1,8 +1,8 @@
-os: windows
+os: linux
 dist: bionic
 
 language:
-    - cpp
+    - c
     
 before_install:
     - pip install --user cpp-coveralls
