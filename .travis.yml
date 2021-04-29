@@ -10,7 +10,7 @@ before_install:
 addons:
     sonarcloud:
         organization: "brovkinartem"
-    token: 23a3a3577b084562e92bdcdbdf875a0b0ac5d45b
+    token: SONAR_TOKEN
     
 script:
     - qmake 
