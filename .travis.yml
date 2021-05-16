@@ -10,7 +10,8 @@ before_install:
 addons:
     sonarcloud:
         organization: "brovkinartem"
-    token: &SONAR_TOKEN
+    token:
+    secure: "4e509f7ccbec7acd532743556fe141e6f3519b2d"
     
 script:
     - qmake 
@@ -20,7 +21,7 @@ script:
 after_success:
     - coveralls --root . -E ".*external.*" -E ".*tests.*"
     - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-    - sonar-scanner
+    - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
     
 notifications:
     email: false
