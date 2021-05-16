@@ -10,7 +10,7 @@ before_install:
 addons:
     sonarcloud:
         organization: "brovkinartem"
-    token: &SONAR_TOKEN
+    token:
     secure: "52244f53753f11adacfc99b3a03abb3676713cc0"
     
 script:
