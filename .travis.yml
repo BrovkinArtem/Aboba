@@ -10,8 +10,8 @@ before_install:
 addons:
     sonarcloud:
         organization: "brovkinartem"
-    token:
-    secure: "4e509f7ccbec7acd532743556fe141e6f3519b2d"
+    token: &SONAR_TOKEN
+    secure: "travis encrypt 52244f53753f11adacfc99b3a03abb3676713cc0"
     
 script:
     - qmake 
